@@ -1,0 +1,79 @@
+<template name="home">
+  <div class="main">
+    <div class="container maincontent">
+      <div class="header-content">
+        <h2>Learn directly from African technology entrepreneurs.
+          Real lessons shared by people walking the same path.
+        </h2>
+      </div>
+
+      <div class="row video-content">
+
+        <div class="col-md-12">
+          <div class="title">
+            <h3>THE OGA EFFECT</h3>
+          </div>
+
+        </div>
+
+        <div class="col-md-8 videoplayer">
+          <video width="100%" controls>
+            <source src="/videos/video1.mp4" type="video/mp4" />
+          </video>
+        </div>
+
+        <div class="col-md-4">
+          <div class="description">
+            Power Distance is a real issue. Entrepreneurs need to connect to influencers to move forward. Learn how founders across Africa went straight to the top of large organisations to make deals.
+          </div>
+        </div>
+
+      </div>
+
+      <div class="questions-content">
+        <div class="col-md-12">
+          <h3>Exercises</h3>
+        </div>
+        <form id='questionsForm'>
+          {{#each this.question}}
+          <div class="question-field col-md-8 col-sm-12">
+            {{question}}
+          </div>
+          <div class="col-md-4 col-sm-0"></div>
+          <div class="answer-field col-md-8 col-sm-12">
+            <textarea placeholder="Enter your answer here..." id='' class="answer" data-questionId={{_id}} data-result=""></textarea>
+          </div>
+          <div class="col-md-4 col-sm-0"></div>
+          {{/each}}
+          <div class="col-md-8 col-sm-12">
+            <button class="saveUserResponse btn btn-primary" id="saveBtn" type='submit' disabled="disabled">Save</button>
+          </div>
+          <div class="col-md-4 col-sm-0"></div>
+        </form>
+
+        <br/><br/>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Success</h4>
+        </div>
+        <div class="modal-body">
+          <p>Get Updated on new videos by sign in</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Not Now</button>
+          <button type="button" class="btn btn-primary">SignIn</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{> footer}}
+</template>
