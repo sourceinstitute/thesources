@@ -27,11 +27,10 @@ Template.home.events({
       } else{
         array.push(
         {
-          currentUserId: currentUserId,
           questionId: questionId,
           answerGiven: textarea.value
         })
-        Router.go('signin');
+        Router.go('signup');
       };
     });
 

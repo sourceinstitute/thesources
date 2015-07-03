@@ -21,6 +21,10 @@ Schemas.QuestionResponses = new SimpleSchema({
   "questions.$.answerGiven": {
     type: String,
     label: 'User response'
+  },
+  user:{
+    type: String,
+    optional: true
   }
 
 });
