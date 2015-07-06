@@ -12,22 +12,23 @@ Template.home.events({
     _.each(textareas, function(textarea) {
       questionId = textarea.dataset.questionid;
 
-
       // console.log('questionId: ' + questionId);      
       // console.log('Answer: ' + textarea.value);
 
+      question = Questions.findOne(questionId).question;
+      
       if (currentUserId) {
         array.push(
         {
           currentUserId: currentUserId,
-          questionId: questionId,
+          questionContent: question,
           answerGiven: textarea.value
         })
 
       } else{
         array.push(
         {
-          questionId: questionId,
+          questionContent: question,
           answerGiven: textarea.value
         })
         Router.go('signup');

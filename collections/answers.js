@@ -11,20 +11,19 @@ Schemas.QuestionResponses = new SimpleSchema({
   //     }
   //   }
   // },
+
+  user: {
+    type: String,
+    optional: true
+  },
   questions: {
     type: [Object]
   },
-  "questions.$.questionId": {
-    type: String,
-    regEx: SimpleSchema.RegEx.Id
+  "questions.$.questionContent": {
+    type: String
   },
   "questions.$.answerGiven": {
-    type: String,
-    label: 'User response'
-  },
-  user:{
-    type: String,
-    optional: true
+    type: String
   }
 
 });
