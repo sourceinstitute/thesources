@@ -1,4 +1,37 @@
+Template.home.helpers({
+    answers: function() {
+        console.log(Meteor.user());
+        if (Meteor.user()) {
+            return Meteor.user().profile.answers;
+            }
+        //return Answers.find();
+    }
+});
+
 Template.home.events({
+    "submit .answerform": function (event) {
+      // Prevent default browser form submit
+      event.preventDefault();
+
+      console.log("answerform");
+
+      var question = event.target.question.value;
+      var answer = event.target.answer.value;
+      
+        Meteor.call('saveAnswer', {question: question, answer: answer}, function(error, response){
+          if (error) {
+            console.log("Something went wrong " + error);
+            sweetAlert("Sorry, something went wrong. Try Again");
+          } else{
+            console.log('good');
+            sweetAlert("Thanks, your answers have been recorded");
+            document.getElementById('questionsForm').reset();
+
+          }
+        })
+ 
+    },
+
   'submit form#questionsForm': function (e, t) {
     e.preventDefault();
 

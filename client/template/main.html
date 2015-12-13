@@ -34,7 +34,21 @@
         <div class="col-md-12">
           <h3>Exercises</h3>
         </div>
-        <form id='questionsForm'>
+  <form class="answerform">
+    <p>Question 1</p>
+    <input type="hidden" name="question" value="1">
+    <input class="answer" name="answer" value="{{answer1}}">
+  </form>
+  <form class="answerform">
+    <p>Question 2</p>
+    <input type="hidden" name="question" value="2">
+    <input class="answer" name="answer" value="{{answer2}}">
+  </form>
+          {{#each answers}}
+            {{question}}:{{answer}}<br>
+          {{/each}}
+
+<form id='questionsForm'>
           {{#each this.question}}
           <div class="question-field col-md-8 col-sm-12">
             {{question}}

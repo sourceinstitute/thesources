@@ -1,3 +1,4 @@
+Answers = new Meteor.Collection('answers');
 QuestionResponses = new Meteor.Collection('questionResponses');
 
 Schemas.QuestionResponses = new SimpleSchema({
