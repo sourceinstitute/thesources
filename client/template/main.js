@@ -1,4 +1,4 @@
-Template.home.helpers({
+Template.masterlayout.helpers({
     answers: function() {
         if (Meteor.user()) {
             return Meteor.user().profile.answers;
@@ -6,7 +6,7 @@ Template.home.helpers({
     }
 });
 
-Template.home.events({
+Template.masterlayout.events({
     "submit .answerform": function (event) {
       // Prevent default browser form submit
       event.preventDefault();
