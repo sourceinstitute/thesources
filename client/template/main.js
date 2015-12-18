@@ -3,6 +3,23 @@ Template.masterlayout.helpers({
         if (Meteor.user()) {
             return Meteor.user().profile.answers;
         }
+    },
+    answer: function(question) {
+        lesson = Router.current().route.path(this);
+        console.log('getting answer for ', lesson, question);
+        if (Meteor.user()) {
+            if (Meteor.user().profile.answers) {
+                var answers = _.filter(Meteor.user().profile.answers, function (item) {
+                    return item.lesson== lesson && item.question == question;
+                });
+                /*
+                var answers = _.sortBy(answers, function (item) {
+                    return item.createDate;
+                });
+                */
+                return answers.pop();
+            }
+        }
     }
 });
 
