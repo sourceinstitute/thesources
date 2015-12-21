@@ -13,6 +13,10 @@
   color: #efefef;
 }
 
+.navbar .navbar-brand img {
+  height: 30px;
+}
+
 .main{
   /*background-color: #ebebeb;*/
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cedce7+0,596a72+100;Grey+3D+%231 */
@@ -63,12 +67,22 @@
 .description{
   width: 100%;
   background-color: #fff;
-  height: 421px;
-  max-height: 421px;
   font-size: 18px;
   padding: 7px;
   overflow-x:hidden;
   overflow-y:scroll;  
+}
+
+.thanks {
+  padding-top: 10px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.thanks img {
+  width: 70px;
+  display: block;
+  margin: 0px auto;
 }
 
 .question-field{
