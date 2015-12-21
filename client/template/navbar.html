@@ -9,21 +9,11 @@
 
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
-          {{#if currentUser}}
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{getEmailAddress}} <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="{{pathFor "signout"}}">log out</a></li>
-            </ul>
-          </li>
-          {{else}}
           <li>
-            <a class="close-navbar" href="{{pathFor "signup"}}">Signup</a>
+            <a class="close-navbar">
+            {{> loginButtons align="right" class="close-navbar"}}
+            </a>
           </li>
-          <li>
-            <a class="close-navbar" href="{{pathFor "signin"}}">Login</a>
-          </li>
-          {{/if}}
         </ul>
       </div>
     </div>

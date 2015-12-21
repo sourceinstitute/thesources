@@ -3,6 +3,8 @@ accounts-facebook@1.0.6
 accounts-google@1.0.6
 accounts-oauth@1.1.8
 accounts-password@1.1.4
+accounts-ui@1.1.6
+accounts-ui-unstyled@1.1.8
 alanning:roles@1.2.14
 aldeed:autoform@5.8.0
 aldeed:collection2@2.6.0
@@ -93,7 +95,6 @@ routepolicy@1.0.6
 service-configuration@1.0.5
 session@1.1.1
 sha@1.0.4
-softwarerero:accounts-t9n@1.1.7
 spacebars@1.0.7
 spacebars-compiler@1.0.7
 srp@1.0.4
@@ -105,9 +106,6 @@ twbs:bootstrap@3.3.6
 ui@1.0.8
 underscore@1.0.4
 url@1.0.5
-useraccounts:bootstrap@1.13.1
-useraccounts:core@1.13.1
-useraccounts:iron-routing@1.13.1
 webapp@1.2.3
 webapp-hashing@1.0.5
 yogiben:admin@1.2.4

@@ -12,10 +12,10 @@ aldeed:autoform
 less
 coffeescript
 raix:handlebar-helpers
+accounts-ui
 accounts-password
 accounts-facebook
 accounts-google
-useraccounts:bootstrap
 kevohagan:sweetalert
 yogiben:admin
 fortawesome:fontawesome
@@ -34,4 +34,3 @@ ejson
 spacebars
 check
 aldeed:collection2
-useraccounts:iron-routing
