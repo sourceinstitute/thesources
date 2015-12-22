@@ -4,6 +4,11 @@
   url("/fonts/raleway/Raleway-Regular.ttf");
 }
 
+body {
+  padding-top: 70px;
+}
+
+/* BEGIN NAVIGATION */
 .navbar{
   background-color: #212C37;
 
@@ -13,110 +18,34 @@
   color: #efefef;
 }
 
-.main{
-  /*background-color: #ebebeb;*/
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cedce7+0,596a72+100;Grey+3D+%231 */
-  background: #cedce7; /* Old browsers */
-  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
-  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2NlZGNlNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM1OTZhNzIiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-  background: -moz-linear-gradient(top,  #cedce7 0%, #596a72 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cedce7), color-stop(100%,#596a72)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  #cedce7 0%,#596a72 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  #cedce7 0%,#596a72 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  #cedce7 0%,#596a72 100%); /* IE10+ */
-  background: linear-gradient(to bottom,  #cedce7 0%,#596a72 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedce7', endColorstr='#596a72',GradientType=0 ); /* IE6-8 */
-
-  min-height: 600px;
-  padding-bottom: 30px;
-}
-
-.maincontent{
-  margin-top: 45px;
-  padding-top: 20px;
-}
-
-.header-content{
-  color: #212C37;
-  width: 70%;
-  font-size: 25px;
-  text-align: center;
-  font-family: Raleway, sans-serif;
-  margin: 30px auto;
-}
-
-.title{
-  font-size: 20px;
-  color:#212C37;
-  width:64%;
-  padding: 10px 5px;
-}
-
-.video-content{
-  margin-top: 50px;
-}
-
-.question-content{
-  margin-top: 70px;
-}
-
-.description{
-  width: 100%;
-  background-color: #fff;
-  height: 421px;
-  max-height: 421px;
-  font-size: 18px;
-  padding: 7px;
-  overflow-x:hidden;
-  overflow-y:scroll;  
-}
-
-.question-field{
-  font-size: 20px;
-  margin-top: 20px;
-}
-
-.answer-field textarea{
-  margin: 10px 0px;
-  width: 100%;
-  height:170px;
-  border: none;
-}
-
-.address{
-  color: #ebebeb;
-}
-
-.btn-primary{
-  float: right !important;
-  margin-right: 5px;
-  width: 100px;
-}
-
-.footer{
-  width:100%;
-  height: 400px;
-  background-color: #212C37;
-}
-
-.footer-header{
+#login-buttons a#login-sign-in-link{
   color: #fff;
-  text-align: center;
+  text-decoration: none;
+}
+/* END NAVIGATION */
+
+/* BEGIN MAIN */
+
+/* END MAIN */
+
+/* BEGIN VIDEO LIST */
+div.list-group-item {
+    height:auto;
+    min-height:210px;
+    padding: 15px 0;
+}
+.list-group-item button {
+  border-radius: 0;
+}
+.stars {
+    margin:20px auto 1px;    
 }
 
-
-/*media query*/
-
-@media(max-width: 991px){
-  .description{
-    margin-top: 15px;
-  }
+.leason-excerpt {
+  padding: 0; 
 }
 
-@media(max-width:1199px){
-  .description{
-    height:280px;
-  }
+.leason-excerpt h4 {
+  margin-bottom: 15px;
 }
-
-
+/* END VIDEO LIST */
