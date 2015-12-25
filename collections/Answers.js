@@ -1,5 +1,13 @@
 Answers = new Meteor.Collection('answers');
 
+//collection rules
+Answers.allow({
+  insert: function(userId, doc) {
+    return !!userId;
+  }
+});
+
+
 AnswerSchema = new SimpleSchema({
   lesson: {
     type: String,
