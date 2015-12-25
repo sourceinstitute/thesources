@@ -1,0 +1,47 @@
+<template name="lesson-1">
+  <div class="row">
+    <div class="col-md-12 ">
+      <div class="row flex-row">
+        <div class="col-md-9 col-xs-12">
+          <!-- 16:9 aspect ratio -->
+          <div class="embed-responsive embed-responsive-16by9">
+            <video class="embed-responsive-item" controls>
+              <source src="/videos/video.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div class="col-md-3 col-xs-12 well lesson-details">
+          <h4 class="lesson-title">Lesson Title</h4>
+          <p>Lesson details</p>
+          <div class="social-share">
+            <a href="http://twitter.com/share?url=<URL>&text=<TEXT>&via=<VIA>" target="_blank" class="share-btn twitter">
+                <i class="fa fa-twitter"></i>
+            </a>
+            <a href="https://plus.google.com/share?url=<BTN>" target="_blank" class="share-btn google-plus">
+                <i class="fa fa-google-plus"></i>
+            </a>
+            <a href="http://www.facebook.com/sharer/sharer.php?u=<URL>" target="_blank" class="share-btn facebook">
+                <i class="fa fa-facebook"></i>
+            </a>
+            <a href="http://www.linkedin.com/shareArticle?url=<URL>&title=<TITLE>&summary=<SUMMARY>&source=<SOURCE_URL>" target="_blank" class="share-btn linkedin">
+                <i class="fa fa-linkedin"></i>
+            </a>
+            <a href="mailto:?subject=<SUBJECT&body=<BODY>" target="_blank" class="share-btn email">
+                <i class="fa fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 ">
+      <p>
+        Lesson transcript
+      </p>
+    </div>
+    <div class="col-md-12 ">
+      <p>
+        lesson questions
+      </p>
+    </div>
+  </div>
+</template>

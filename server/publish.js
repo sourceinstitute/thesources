@@ -1,3 +1,3 @@
 Meteor.publish('answers', function() {
-  return Answers.find();
+  return Answers.find({userId: this.userId});
 });
