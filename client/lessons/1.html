@@ -1,6 +1,9 @@
 <template name="lesson-1">
   <div class="row">
     <div class="col-md-12 ">
+      <div class="row">
+        <h2>Lesson title</h2>
+      </div>
       <div class="row flex-row">
         <div class="col-md-9 col-xs-12">
           <!-- 16:9 aspect ratio -->
@@ -11,7 +14,7 @@
           </div>
         </div>
         <div class="col-md-3 col-xs-12 well lesson-details">
-          <h4 class="lesson-title">Lesson Title</h4>
+          <h4 class="lesson-title" data-lesson="lesson-1">Lesson 1- Lesson Title</h4>
           <p>Lesson details</p>
           <div class="social-share">
             <a href="http://twitter.com/share?url=<URL>&text=<TEXT>&via=<VIA>" target="_blank" class="share-btn twitter">
@@ -42,6 +45,63 @@
       <p>
         lesson questions
       </p>
+      {{> questionAndAnswer}}
     </div>
   </div>
+</template>
+
+<template name="questionAndAnswer">
+  {{#if currentUser}}
+  <form class="questionForm">
+        <div class="form-group">
+          <label for="question1">Qustion number one?</label>
+          <textarea class="form-control" name="question1" rows="3" id="answer1" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="question2">Qustion number two with Radio?</label>
+          <div class="radio">
+            <label>
+              <input type="radio" name="question2" value="option1" required>
+              Option one is this and that&mdash;be sure to include why it's great
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="question2" value="option2">
+              Option two can be something else and selecting it will deselect option one
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="question2" value="option3">
+              Option three is blah blah
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="question3">Qustion number tree with checkbox?</label>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="question3" value="Option one is this and that&mdash;be sure to include why it's great" required>
+              Option one is this and that&mdash;be sure to include why it's great
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="question3" value="Option two is blah" >
+              Option two is blah
+            </label>
+          </div>
+          <button type="submit" >Save</button>
+        </div>
+      </form>
+    {{else}}
+    <div>
+      <p>
+        please signin to answer questions
+      </p>
+    </div>
+    {{/if}}
 </template>

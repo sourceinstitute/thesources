@@ -1,3 +1,3 @@
-Meteor.publish('answers', function() {
-  return Answers.find({userId: this.userId});
+Meteor.publish('lessonsAnswers', function() {
+  return LessonsAnswers.find({userId: this.userId});
 });

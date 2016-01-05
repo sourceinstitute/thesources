@@ -33,3 +33,6 @@ gwendall:auth-client-callbacks
 
 twbs:bootstrap
 meteortoys:allthings
+
+themeteorchef:jquery-validation
+sach:flow-db-admin
