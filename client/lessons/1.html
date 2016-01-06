@@ -2,13 +2,22 @@
   <div class="row">
     <div class="col-md-12 ">
       <div class="row">
-        <h2>Power Distance</h2>
+        <h2>Overcoming Power Distance</h2>
+
+        <p>
+        “Go straight to the top, there’s nothing to lose.”
+        Ayo Adigun</p>
+
+        <p>Overcoming power distance is something entrepreneurs have to do worldwide, but it can be particularly difficult in the African context.</p>
       </div>
       <div class="row flex-row">
         <div class="col-md-9 col-xs-12">
           <!-- 16:9 aspect ratio -->
           <div class="embed-responsive embed-responsive-16by9">
-         </div>
+            <video class="embed-responsive-item" controls>
+              <source src="/videos/video.mp4" type="video/mp4">
+            </video>
+          </div>
         </div>
         <div class="col-md-3 col-xs-12 well lesson-details">
           <h4 class="lesson-title" data-lesson="lesson-1">Lesson 1- Lesson Title</h4>
@@ -33,83 +42,12 @@
         </div>
       </div>
     </div>
-  </div>
-  <div class="row">
     <div class="col-md-12 ">
       <p>
-      Overcoming Power Distance
-
-      “Go straight to the top, there’s nothing to lose.”
-      Ayo Adigun
-
-      Overcoming power distance is something entrepreneurs have to do worldwide, but it can be particularly difficult in the African context.
-            <video class="embed-responsive-item" controls>
-              <source src="/videos/video.mp4" type="video/mp4">
-            </video>
- 
-
-      There are two interconnected issues at play here. The first is overcoming the social stigma against going straight to the top. The second is developing practical techniques for getting to those people.
-
-      There are two basic categories for connecting to people and overcoming power distance concerns, those that use and those that bypass social networks.
-      Using Social Networks
-      The good news here is that the technology of online social networks has expanded your social group beyond the people you may directly know. So, start by considering which of your social networks may give you the chance to connect with a person you want to contact.
-
-      When being connected is part of your business, a lot of professionals invest a bit of time in research.  They know that looking around, rather than rely on the obvious choices, increases the chances of a connection actually happening and being helpful.
-
-      See how quickly you can come up with a list of 100 people that would super-charge your network.  A list of 100 might seem daunting at first, but it's easier if you break it down into categories:
-      10 ideal customers (find the specific decision-makers by name and title)
-      10 distribution partners (who already sell to a similar market)
-      10 investors (who have invested in your category)
-      10 analogs (companies who've done something similar and can share benchmarks and advice)
-      compeititors
-      10 antilogs (companies who've tried something similar and failed)
-      10 domain experts, including press
-
-      Brainstorm your list here!  No idea is a bad idea.  See if you can come up with a list of 100 in 10 minutes.  (Click here for a counter.  Go!)  
+        
       </p>
-
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6 ">
-        <form >
-            <textarea name="network-wishlist"></textarea>
-         </form>
-    </div>
-
-    <div class="col-md-6 ">
-
-      Tip: Dream big!  Add anyone you can think of.  Then, look for other similar people.  
-
-      Tip: Also, think practically. The biggest names might be harder to reach, but slightly lesser known people are often of equal or greater value -- you just need to be creative and do a little more research.
-    </div>
-  </div>
-  <div class="row">
     <div class="col-md-12 ">
-      Both Ayo Adigun, Founder of Flexiplay and DAA STEM Academy and Femi Akinde founder of Slim Trader, found Linkedin to be an invaluable tool. The professional nature of the network makes people more likely to be responsive to you reaching out to them there.
-
-      This is also a good reminder to cultivate your Linkedin network in general, you never know when it might come in handy.
-
-      If you can’t start off with a direct connection, try using your online and offline social networks to at least bypass the people at the bottom and get you to who you want to talk to faster through referrals. For Nana Agyeman-Prempeh, co-founder of Asoriba, that meant saving weeks of time getting in touch with important pastors to pitch his product.
-
-      Now, let’s put your list to good use.   Go through your wishlist, and search for each person on LinkedIn.  See if you can find 3 people who share a common contact.  If your network isn’t strong on LinkedIn, there are other ways to find a friendly connection.  Do you know someone who went to the same school?  To the same associations? Do you have a connection to one of their investors or customers?
-
-      <form>
-      How many people did you find you could connect to? <input name="connections-found">
-      </form>
-
-      Bypassing Social Networks
-      Sometimes there’s just no way to make a connection through existing networks. But don’t fear, there’s still plenty you can do.
-
-      In marketing this is called a “cold call”, meaning contacting someone without any prior connection. Done right, it can save a ton of time.
-
-      For Ayo Adigun, it was about knowing when to ask for something and when not to. When he first met with the head of a major Nigerian credit card company, he surprised them by not asking directly for help or money. Instead, he informed them of what his company was doing and who they were. The credit card company was impressed enough with Adigun that they ended up offering him more help than he was looking for at that time.
-
-      However, when Adigun met the head of DHL in the UK, he went for the direct approach. Asking for help with his project, the directness was appreciated and resulted in his getting immediate approval and handing implementation to his subordinates at DHL. The details could wait, what mattered was getting approval from the top and getting the ball rolling.
-
-      When it comes to cold calling, Femi focused on understanding the problems of the organization he was contacting. By being direct and having a frank conversation about those problems and how he could help the company fix them, Femi obtained fast approval for a business deal.
-
-
       {{> questionAndAnswer}}
     </div>
   </div>
@@ -117,9 +55,81 @@
 
 <template name="questionAndAnswer">
   {{#if currentUser}}
-    {{#if isAnswered "lesson-1"}}
+    
+  <form class="questionForm">
+        <p>
+          There are two interconnected issues at play here. The first is overcoming the social stigma against going straight to the top. The second is developing practical techniques for getting to those people.
+
+          There are two basic categories for connecting to people and overcoming power distance concerns, those that use and those that bypass social networks.
+          Using Social Networks
+          The good news here is that the technology of online social networks has expanded your social group beyond the people you may directly know. So, start by considering which of your social networks may give you the chance to connect with a person you want to contact.
+
+          When being connected is part of your business, a lot of professionals invest a bit of time in research.  They know that looking around, rather than rely on the obvious choices, increases the chances of a connection actually happening and being helpful.
+
+          See how quickly you can come up with a list of 100 people that would super-charge your network.  A list of 100 might seem daunting at first, but it's easier if you break it down into categories:
+          10 ideal customers (find the specific decision-makers by name and title)
+          10 distribution partners (who already sell to a similar market)
+          10 investors (who have invested in your category)
+          10 analogs (companies who've done something similar and can share benchmarks and advice)
+          compeititors
+          10 antilogs (companies who've tried something similar and failed)
+          10 domain experts, including press
+
+          Brainstorm your list here!  No idea is a bad idea.  See if you can come up with a list of 100 in 10 minutes.  (Click here for a counter.  Go!) 
+        </p>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="question1">Qustion number one?</label>
+              <textarea class="form-control" name="question1" rows="3" id="answer1" required></textarea>
+            </div>
+          </div>
+          <div class="col-md-6 ">
+            <p>
+            Tip: Dream big!  Add anyone you can think of.  Then, look for other similar people.  
+
+            Tip: Also, think practically. The biggest names might be harder to reach, but slightly lesser known people are often of equal or greater value -- you just need to be creative and do a little more research.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 ">
+            <p>
+              Both Ayo Adigun, Founder of Flexiplay and DAA STEM Academy and Femi Akinde founder of Slim Trader, found Linkedin to be an invaluable tool. The professional nature of the network makes people more likely to be responsive to you reaching out to them there.
+
+              This is also a good reminder to cultivate your Linkedin network in general, you never know when it might come in handy.
+
+              If you can’t start off with a direct connection, try using your online and offline social networks to at least bypass the people at the bottom and get you to who you want to talk to faster through referrals. For Nana Agyeman-Prempeh, co-founder of Asoriba, that meant saving weeks of time getting in touch with important pastors to pitch his product.
+
+              Now, let’s put your list to good use. Go through your wishlist, and search for each person on LinkedIn. See if you can find 3 people who share a common contact. If your network isn’t strong on LinkedIn, there are other ways to find a friendly connection.  Do you know someone who went to the same school?  To the same associations? Do you have a connection to one of their investors or customers?
+            </p>
+            
+            <div class="form-group">
+              <label for="question2">How many people did you find you could connect to?</label>
+              <input class="form-control" type="text" name="question2" required>
+            </div>
+
+            <p>
+              Bypassing Social Networks
+              Sometimes there’s just no way to make a connection through existing networks. But don’t fear, there’s still plenty you can do.
+
+              In marketing this is called a “cold call”, meaning contacting someone without any prior connection. Done right, it can save a ton of time.
+
+              For Ayo Adigun, it was about knowing when to ask for something and when not to. When he first met with the head of a major Nigerian credit card company, he surprised them by not asking directly for help or money. Instead, he informed them of what his company was doing and who they were. The credit card company was impressed enough with Adigun that they ended up offering him more help than he was looking for at that time.
+
+              However, when Adigun met the head of DHL in the UK, he went for the direct approach. Asking for help with his project, the directness was appreciated and resulted in his getting immediate approval and handing implementation to his subordinates at DHL. The details could wait, what mattered was getting approval from the top and getting the ball rolling.
+
+              When it comes to cold calling, Femi focused on understanding the problems of the organization he was contacting. By being direct and having a frank conversation about those problems and how he could help the company fix them, Femi obtained fast approval for a business deal.
+            </p>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-success btn-lesson-submit">Save</button>
+        
+      </form>
+      {{#if isAnswered "lesson-1"}}
       {{#each lessonAnswers "lesson-1"}}
         <div class="usersAnswers-wrapper">
+          <h4>Your Last Answers</h4>
+          <p>NOTE: You can always answer again! Just do excersise again and hit Save</p>
           {{#each answers}}
             {{#if equal questionType "checkbox"}}
               {{#if equalPrevious @index ..}}
@@ -135,56 +145,8 @@
           {{/each}}
         </div>
       {{/each}}
-    {{else}}
     
     {{/if}}
-    
-  <form class="questionForm">
-        <div class="form-group">
-          <label for="question1">Qustion number one?</label>
-          <textarea class="form-control" name="question1" rows="3" id="answer1" required></textarea>
-        </div>
-
-        <div class="form-group">
-          <label for="question2">Qustion number two with Radio?</label>
-          <div class="radio">
-            <label>
-              <input type="radio" name="question2" value="option1" required>
-              Option one is this and that&mdash;be sure to include why it's great
-            </label>
-          </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="question2" value="option2">
-              Option two can be something else and selecting it will deselect option one
-            </label>
-          </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="question2" value="option3">
-              Option three is blah blah
-            </label>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="question3">Qustion number tree with checkbox?</label>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" name="question3" value="Option one is this and that&mdash;be sure to include why it's great" required>
-              Option one is this and that&mdash;be sure to include why it's great
-            </label>
-          </div>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" name="question3" value="Option two is blah" >
-              Option two is blah
-            </label>
-          </div>
-          
-        </div>
-        <button type="submit" >Save</button>
-      </form>
     {{else}}
     <div>
       <p>
