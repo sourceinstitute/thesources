@@ -34,7 +34,7 @@ div.list-group-item {
     min-height: 220px;
     padding: 15px 0;
 }
-.list-group-item button {
+.list-group-item a {
   border-radius: 0;
 }
 .media > figure.pull-left {
@@ -48,6 +48,13 @@ div.list-group-item {
 }
 .lesson-excerpt h4 {
   margin-bottom: 15px;
+}
+.lesson-watch {
+  min-height: 190px;
+}
+.lesson-watch .btn {
+  position: relative;
+  top: 70px;
 }
 /* END VIDEO LIST */
 

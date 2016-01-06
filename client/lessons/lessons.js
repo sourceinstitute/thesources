@@ -14,25 +14,22 @@ Template.questionAndAnswer.helpers({
   },
   equalPrevious: function(index, parent) {
     var answers = parent.answers;
-    console.log(answers[index]);
     return (answers[index].questionNumber === answers[index-1].questionNumber) ? true : false;
   },
   lessonAnswers: function(lessonTitle) {
-    console.log(lessonTitle);
     return LessonsAnswers.find({title: lessonTitle, userId: Meteor.userId()}, {sort: {createdAt: -1}, limit: 1}).fetch();
     //need to play now with it
   }
 });
 
 Template.questionAndAnswer.onRendered(function() { 
-  console.log(Meteor.user());
-  console.log(Meteor.userId());
 
-  $('.questionForm').validate({
-    submitHandler: function (form, event) {
-      //todo if user submited answers already aka lessonsAnswers already exists, reject insert
+  //more custom validations http://meteortips.com/second-meteor-tutorial/validation/
+});
 
-      var userId;
+Template.questionAndAnswer.events({
+  "submit .questionForm, blur textarea, change input": function (e) {
+    var userId;
       var lesson = document.getElementsByClassName("lesson-title")[0];
 
       if(lesson.getAttribute('data-lesson')) {
@@ -78,18 +75,8 @@ Template.questionAndAnswer.onRendered(function() {
           { validationContext: "updateForm" }
         );
       });
-      window.scrollTo(0,document.body.scrollHeight);
-      event.preventDefault();
-    }
-  });
-  //more custom validations http://meteortips.com/second-meteor-tutorial/validation/
-});
-
-Template.questionAndAnswer.events({
-  /*
-  "submit .questionForm": function (e) {
-    
-  }*/
+      e.preventDefault();
+  }
 });
 
 Template.questionAndAnswerTwo.helpers({
@@ -108,22 +95,21 @@ Template.questionAndAnswerTwo.helpers({
   },
   equalPrevious: function(index, parent) {
     var answers = parent.answers;
-    console.log(answers[index]);
     return (answers[index].questionNumber === answers[index-1].questionNumber) ? true : false;
   },
   lessonAnswers: function(lessonTitle) {
-    console.log(lessonTitle);
     return LessonsAnswers.find({title: lessonTitle, userId: Meteor.userId()}, {sort: {createdAt: -1}, limit: 1}).fetch();
     //need to play now with it
   }
 });
 
 Template.questionAndAnswerTwo.onRendered(function() { 
-  $('.questionForm').validate({
-    submitHandler: function (form, event) {
-      //todo if user submited answers already aka lessonsAnswers already exists, reject insert
+  //more custom validations http://meteortips.com/second-meteor-tutorial/validation/
+});
 
-      var userId;
+Template.questionAndAnswerTwo.events({
+  "submit .questionForm, blur textarea, change input": function (e) {
+    var userId;
       var lesson = document.getElementsByClassName("lesson-title")[0];
 
       if(lesson.getAttribute('data-lesson')) {
@@ -169,16 +155,6 @@ Template.questionAndAnswerTwo.onRendered(function() {
           { validationContext: "updateForm" }
         );
       });
-      window.scrollTo(0,document.body.scrollHeight);
-      event.preventDefault();
-    }
-  });
-  //more custom validations http://meteortips.com/second-meteor-tutorial/validation/
-});
-
-Template.questionAndAnswerTwo.events({
-  /*
-  "submit .questionForm": function (e) {
-    
-  }*/
+      e.preventDefault();
+  }
 });
