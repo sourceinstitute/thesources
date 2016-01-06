@@ -9,6 +9,14 @@ Template.questionAndAnswer.helpers({
       return true;
     }
   },
+  equal: function(string1, string2) {
+    return string1 === string2;
+  },
+  equalPrevious: function(index, parent) {
+    var answers = parent.answers;
+    console.log(answers[index]);
+    return (answers[index].questionNumber === answers[index-1].questionNumber) ? true : false;
+  },
   lessonAnswers: function(lessonTitle) {
     console.log(lessonTitle);
     return LessonsAnswers.find({title: lessonTitle, userId: Meteor.userId()}, {sort: {createdAt: -1}, limit: 1}).fetch();

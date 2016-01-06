@@ -117,13 +117,28 @@
 
 <template name="questionAndAnswer">
   {{#if currentUser}}
-    {{#each lessonAnswers "lesson-1"}}
-      lesson title: {{title}}
-      lesson answers: 
-      {{#each answers}}
-        {{question}}
+    {{#if isAnswered "lesson-1"}}
+      {{#each lessonAnswers "lesson-1"}}
+        <div class="usersAnswers-wrapper">
+          {{#each answers}}
+            {{#if equal questionType "checkbox"}}
+              {{#if equalPrevious @index ..}}
+                <p>{{answer}}</p>
+              {{else}}
+                <h4>{{questionNumber}}. {{question}}</h4>
+                <p>{{answer}}</p>
+              {{/if}}
+            {{else}}
+              <h4>{{questionNumber}}. {{question}}</h4>
+              <p>{{answer}}</p>
+            {{/if}}   
+          {{/each}}
+        </div>
       {{/each}}
-    {{/each}}
+    {{else}}
+    
+    {{/if}}
+    
   <form class="questionForm">
         <div class="form-group">
           <label for="question1">Qustion number one?</label>
