@@ -28,6 +28,10 @@ Answer = new SimpleSchema({
     type: String,
     label: 'Answer'
   },
+  version: {
+    type: Number,
+    label: 'version'
+  },
   // Force value to be current date (on server) upon insert
   // and prevent updates thereafter.
   createdAt: {
