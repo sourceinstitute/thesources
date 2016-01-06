@@ -1,11 +1,16 @@
 LessonsAnswers = new Mongo.Collection('lessonsAnswers');
 
+
 //collection rules
 LessonsAnswers.allow({
   insert: function(userId, doc) {
     return !!userId;
+  },
+  update: function(userId, doc) {
+    return !!userId;
   }
 });
+
 
 Answer = new SimpleSchema({
   question: {
@@ -16,19 +21,22 @@ Answer = new SimpleSchema({
     type: Number,
     label: 'Question number'
   },
-  answerType: {
+  questionType: {
     type: String
   },
   answer: {
     type: String,
     label: 'Answer'
   },
+  // Force value to be current date (on server) upon insert
+  // and prevent updates thereafter.
   createdAt: {
     type: Date,
     label: 'Created At',
     autoValue: function() {
       return new Date();
-    }
+    },
+    denyUpdate: true
   }
 });
 
@@ -53,11 +61,20 @@ LessonAnswersSchema = new SimpleSchema({
     type: [Answer],
     optional: true
   },
+  // Force value to be current date (on server) upon insert
+  // and prevent updates thereafter.
   createdAt: {
     type: Date,
     autoValue: function() {
-      return new Date();
-    }
+      if (this.isInsert) {
+        return new Date();
+      } else if (this.isUpsert) {
+        return {$setOnInsert: new Date()};
+      } else {
+        this.unset();
+      }
+    },
+    denyUpdate: true
   }
 });
 // Attach schema to collection
