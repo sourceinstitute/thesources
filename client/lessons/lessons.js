@@ -8,6 +8,8 @@ Template.questionAndAnswer.onRendered(function() {
 
   $('.questionForm').validate({
     submitHandler: function (form, event) {
+      //todo if user submited answers already aka lessonsAnswers already exists, reject insert
+      
       var userId;
       var lesson = document.getElementsByClassName("lesson-title")[0];
 

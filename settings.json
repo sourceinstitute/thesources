@@ -1,0 +1,10 @@
+{
+  "public": {
+    "ga": {
+      "account": "ADD YOUR ACCOUNT"
+    }
+  },
+  "private": {
+    //here add private third parties
+  }
+}
