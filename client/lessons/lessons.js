@@ -44,37 +44,24 @@ Template.questionAndAnswer.events({
         //todo handle no userID
       }
 
-      var currentLessonsAnswersId = LessonsAnswers.insert({
-        title: lessonTitle,
-        userId: userId,
-        userEmail: Meteor.user().emails[0].address
-      });
-      
       var formData = $(".questionForm").serializeArray();
 
-      $.each(formData, function(index) {
-        var label = $('label[for="'+this.name+'"]');
-        var questionType = document.getElementsByName(this.name)[0].type;
-        var questionNumber = this.name.substring(this.name.indexOf("n")+1);
-        
-        LessonsAnswers.update(
-          {
-            _id: currentLessonsAnswersId
-          },
-          {
-            $push: {
-              answers : {
-                question: label.text(),
-                questionNumber: questionNumber,
-                questionType: questionType,
-                answer: this.value,
-                version: 1
-              }
-            }
-          },
-          { validationContext: "updateForm" }
-        );
+      var answerList = $.map(formData, function(a) {
+        console.log(a);
+        var label = $('label[for="'+a.name+'"]');
+        var questionType = document.getElementsByName(a.name)[0].type;
+        var questionNumber = a.name.substring(a.name.indexOf("n")+1);
+        return {
+          question: label.text(),
+          questionNumber: questionNumber,
+          questionType: questionType,
+          answer: a.value || "Nothing",
+          version: 1
+        };
       });
+
+      Meteor.call('submitAnswer', lessonTitle, answerList);
+
       e.preventDefault();
   }
 });

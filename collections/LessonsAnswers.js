@@ -44,7 +44,6 @@ Answer = new SimpleSchema({
   }
 });
 
-
 LessonAnswersSchema = new SimpleSchema({
   title: {
     type: String,
@@ -64,6 +63,26 @@ LessonAnswersSchema = new SimpleSchema({
   answers: {
     type: [Answer],
     optional: true
+  },
+  history: {
+    type: [{
+      createdAt: {
+        type: Date,
+        autoValue: function() {
+          if (this.isInsert) {
+            return new Date();
+          } else if (this.isUpsert) {
+            return {$setOnInsert: new Date()};
+          } else {
+            this.unset();
+          }
+        },
+        denyUpdate: true
+      },
+      answers: [Answer]
+    }],
+    optional: true,
+    blackbox: true
   },
   // Force value to be current date (on server) upon insert
   // and prevent updates thereafter.
