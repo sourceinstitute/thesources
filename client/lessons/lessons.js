@@ -1,3 +1,19 @@
+UI.registerHelper('shareOnFacebookLink', function() {
+  return 'https://www.facebook.com/sharer/sharer.php?&appId=707931656006995&u=' + Meteor.absoluteUrl(FlowRouter.current().path.replace(/^\//, ''));
+});
+
+UI.registerHelper('shareOnTwitterLink', function(lessonTitle) {
+  return 'https://twitter.com/intent/tweet?url=' + Meteor.absoluteUrl(FlowRouter.current().path.replace(/^\//, '')) + '&text=' + lessonTitle + '&via=sourceinst';
+});
+
+UI.registerHelper('shareOnGooglePlusLink', function() {
+  return 'https://plus.google.com/share?url=' + Meteor.absoluteUrl(FlowRouter.current().path.replace(/^\//, ''));
+});
+
+UI.registerHelper('shareLink', function() {
+  return Meteor.absoluteUrl(FlowRouter.current().path.replace(/^\//, ''));
+});
+
 Template.questionAndAnswer.helpers({
   // todo fetch answers and fill form, pay attention how to work with radio/checkbox
   // this can happen when we have userId so if logedin user maybe no need to pay attention on that, we will see
@@ -110,38 +126,25 @@ Template.questionAndAnswerTwo.events({
       } else {
         //todo handle no userID
       }
-
-      var currentLessonsAnswersId = LessonsAnswers.insert({
-        title: lessonTitle,
-        userId: userId,
-        userEmail: Meteor.user().emails[0].address
-      });
       
       var formData = $(".questionForm").serializeArray();
 
-      $.each(formData, function(index) {
-        var label = $('label[for="'+this.name+'"]');
-        var questionType = document.getElementsByName(this.name)[0].type;
-        var questionNumber = this.name.substring(this.name.indexOf("n")+1);
-        
-        LessonsAnswers.update(
-          {
-            _id: currentLessonsAnswersId
-          },
-          {
-            $push: {
-              answers : {
-                question: label.text(),
-                questionNumber: questionNumber,
-                questionType: questionType,
-                answer: this.value,
-                version: 1
-              }
-            }
-          },
-          { validationContext: "updateForm" }
-        );
+      var answerList = $.map(formData, function(a) {
+        console.log(a);
+        var label = $('label[for="'+a.name+'"]');
+        var questionType = document.getElementsByName(a.name)[0].type;
+        var questionNumber = a.name.substring(a.name.indexOf("n")+1);
+        return {
+          question: label.text(),
+          questionNumber: questionNumber,
+          questionType: questionType,
+          answer: a.value || "Nothing",
+          version: 1
+        };
       });
+
+      Meteor.call('submitAnswer', lessonTitle, answerList);
+
       e.preventDefault();
   }
 });
