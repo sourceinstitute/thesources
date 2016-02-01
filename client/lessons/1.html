@@ -14,10 +14,6 @@
      </div>
 
   </div>
-  {{> questionAndAnswer}}
-</template>
-
-<template name="questionAndAnswer">
   {{#if currentUser}}
     
   <form class="questionForm">
@@ -92,28 +88,7 @@
     <button type="submit" class="btn btn-success btn-lesson-submit">Save</button>
     
   </form>
-  {{#if isAnswered "lesson-1"}}
-  {{#each lessonAnswers "lesson-1"}}
-    <div class="usersAnswers-wrapper">
-      <h4>Your Answers</h4>
-      <p>NOTE: You can always answer again! Just do excersise again and hit Save</p>
-      {{#each answers}}
-        {{#if equal questionType "checkbox"}}
-          {{#if equalPrevious @index ..}}
-            <p>{{answer}}</p>
-          {{else}}
-            <h4>{{questionNumber}}. {{question}}</h4>
-            <p>{{answer}}</p>
-          {{/if}}
-        {{else}}
-          <h4>{{questionNumber}}. {{question}}</h4>
-          <p>{{answer}}</p>
-        {{/if}}   
-      {{/each}}
-    </div>
-  {{/each}}
-
-{{/if}}
+  {{>lessonAnswers lesson="lesson-1"}}
 {{else}}
 <div>
   <p>

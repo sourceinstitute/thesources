@@ -1,0 +1,24 @@
+<template name="lessonAnswers">
+  {{#if isAnswered lesson}}
+  {{#each lessonAnswers lesson}}
+    <div class="usersAnswers-wrapper">
+      <h4>Your Answers</h4>
+      <p>NOTE: You can always answer again! Just do excersise again and hit Save</p>
+      {{#each answers}}
+        {{#if equal questionType "checkbox"}}
+          {{#if equalPrevious @index ..}}
+            <p>{{answer}}</p>
+          {{else}}
+            <h4>{{questionNumber}}. {{question}}</h4>
+            <p>{{answer}}</p>
+          {{/if}}
+        {{else}}
+          <h4>{{questionNumber}}. {{question}}</h4>
+          <p>{{answer}}</p>
+        {{/if}}   
+      {{/each}}
+    </div>
+  {{/each}}
+
+{{/if}}
+</template>
