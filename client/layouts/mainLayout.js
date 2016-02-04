@@ -22,6 +22,19 @@ Template.mainLayout.helpers({
   }
 });
 
+Template.mainLayout.onCreated(function() {
+  //check if this.data.lesson() exists and then change seo
+  /*
+  SEO.set({
+    title: lessonTitle,
+    description: 'Description for this template',
+    meta: {
+      'property="og:image"': 'http://locationofimage.com/image.png'
+    }
+  });*/
+  
+});
+
 Template.mainLayout.events({
   "submit .questionForm, blur textarea, change input": function (e) {
     var userId;
