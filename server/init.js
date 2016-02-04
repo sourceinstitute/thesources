@@ -10,10 +10,18 @@ Meteor.startup(function() {
   };
 
   Accounts.emailTemplates.verifyEmail.text = function(user, url) {
-    return 'Click on the following link to verify your email address: ' + url;
+    return 'Click on the following link to verify your email address: ' + url
   };
 
   //same thing for recovery email
+
+  Accounts.emailTemplates.resetPassword.subject = function(user) {
+    return 'Reset your password'
+  };
+
+  Accounts.emailTemplates.resetPassword.text = function(user, url) {
+    return 'Click on the following link to reset your password: ' + url
+  };
 
   Accounts.config({
     sendVerificationEmail: true
