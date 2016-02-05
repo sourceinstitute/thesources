@@ -1,8 +1,8 @@
 Meteor.startup(function() {
-  process.env.MAIL_URL = 'smtp://ncerovac:sergio1101@smtp.sendgrid.net:587';
+  process.env.MAIL_URL = 'smtp://source:Kut7Drarv=@smtp.sendgrid.net:587';
 
   //setup custom email template
-  Accounts.emailTemplates.from = 'no-reply@whateverdomain.com'
+  Accounts.emailTemplates.from = 'no-reply@thesources.co'
   Accounts.emailTemplates.sitename = 'The Sources'
 
   Accounts.emailTemplates.verifyEmail.subject = function(user) {

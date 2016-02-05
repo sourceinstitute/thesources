@@ -22,16 +22,32 @@ Template.mainLayout.helpers({
   }
 });
 
+Template.mainLayout.rendered = function(){
+  if (!this.rendered){
+    // run my code
+    if (typeof this.data.title !== 'undefined') {
+    console.log('jeste lesson');
+    console.log(this);
+    SEO.set({
+      title: this.data.title(),
+      description: 'Description for this template',
+      meta: {
+        'name="twitter:image"' : (typeof this.data.slug !== 'undefined')? Meteor.absoluteUrl()+'images/thumbnails/'+this.data.slug()+'.jpg': Meteor.absoluteUrl()+'images/thumbnails/default.jpg',
+        'property="og:title"' : this.data.title(),
+        'property="og:image"': (typeof this.data.slug !== 'undefined')? Meteor.absoluteUrl()+'images/thumbnails/'+this.data.slug()+'.jpg': Meteor.absoluteUrl()+'images/thumbnails/default.jpg'
+      }
+    });
+  }
+    this.rendered = true;
+  }
+};
+
 Template.mainLayout.onCreated(function() {
   //check if this.data.lesson() exists and then change seo
-  /*
-  SEO.set({
-    title: lessonTitle,
-    description: 'Description for this template',
-    meta: {
-      'property="og:image"': 'http://locationofimage.com/image.png'
-    }
-  });*/
+  
+
+  
+  
   
 });
 
