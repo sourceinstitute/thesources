@@ -39,22 +39,12 @@
   
     {{#if currentUser}}
     
-  <form class="questionForm">
     <div class="row">
         <div class="col-md-8">
           <h2>Self-Funding (Bootstrapping)</h2>
           <p>
             Nearly every founder is going to have to fund their idea at some point in its early stages. This could mean using your salary, borrowing money from friends or family. Here are the questions to start with:
           </p>
-          <div class="form-group">
-            <label for="question1">How much money do you have available?</label>
-            <input class="form-control" type="text" name="question1">
-          </div>
-
-          <div class="form-group">
-            <label for="question2">How can you use that money to get you to the next stage of funding?</label>
-            <textarea class="form-control" name="question2" rows="3"></textarea>
-          </div>
 
           <p> That could mean demonstrating the validity of your business, building a prototype, applying for grants, entering competitions, establishing a reputation which could allow you to get consulting gigs, etc.</p>
 
@@ -73,11 +63,6 @@
 
           <p>Eyram Tawia makes that trade with his gaming company Leti Arts. He was unable to get funding at the early stages in part because of a lack of understanding for what his company was trying to accomplish. So he had to get creative. For him that meant using consulting as his company’s sole source of revenue while it got off the ground. That may not be a recipe for meteoric growth, but it gave the company what it needed to begin releasing games and bringing in their own revenue.</p>
 
-          <div class="form-group">
-            <label for="question3">Chances are that you have some expertise that’s valuable to a paying client.Name 3 potential clients that could use your help?</label>
-            <textarea class="form-control" name="question3" rows="3"></textarea>
-          </div>
-
       </div>
 
   </div>
@@ -89,79 +74,9 @@
 
         <p>Matt Wainright’s company Standard Microgrid knew there was no way it was going to receive any grants before they had a good idea of what their product would look like, how it would function in the field, how their business planned to grow, and most of all, how it would fit into the goals of the foundations giving the grants. This led the founders to first invest their own money into demonstrating their commercial potential. Applying for grants from the start would have been a simple waste of time. They then did extensive research, made a detailed list of potential grants, and used a funding model to quickly make decisions about where to invest their time and resources. The result was that they managed to get 3 of the 20 grants they applied for and obtain $250,000 - enough funding to get to the investment stage.</p>
 
-        <div class="form-group">
-          <label for="question4">Which of these grant categories could apply to your business?</label>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" name="question4" value="Soft Loans">
-              Soft Loans
-            </label>
-          </div>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" name="question4" value="Development Capital">
-              Development Capital
-            </label>
-          </div>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" name="question4" value="Traditional Grants">
-              Traditional Grants
-            </label>
-          </div>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" name="question4" value="Women Empowerment">
-              Women Empowerment
-            </label>
-          </div>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" name="question4" value="Environment">
-              Environment
-            </label>
-          </div>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" name="question4" value="Food Safety">
-              Food Safety
-            </label>
-          </div>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" name="question4" value="Children">
-              Children
-            </label>
-          </div>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" name="question4" value="Security">
-              Security
-            </label>
-          </div>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" name="question4" value="Education">
-              Education
-            </label>
-          </div>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" name="question4" value="Health">
-              Health
-            </label>
-          </div>
-        </div>
-
     </div>
   </div>
-
         
-      
-        <button type="submit" class="btn btn-success btn-lesson-submit">Save</button>
-        
-      </form>
-      {{>lessonAnswers lesson="lesson-2"}}
     {{else}}
     <div>
       <p>
