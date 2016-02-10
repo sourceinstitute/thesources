@@ -26,8 +26,6 @@ Template.mainLayout.rendered = function(){
   if (!this.rendered){
     // run my code
     if (typeof this.data.title !== 'undefined') {
-    console.log('jeste lesson');
-    console.log(this);
     SEO.set({
       title: this.data.title(),
       description: 'Description for this template',
@@ -71,7 +69,6 @@ Template.mainLayout.events({
       var formData = $(".questionForm").serializeArray();
 
       var answerList = $.map(formData, function(a) {
-        console.log(a);
         var label = $('label[for="'+a.name+'"]');
         var questionType = document.getElementsByName(a.name)[0].type;
         var questionNumber = a.name.substring(a.name.indexOf("n")+1);
