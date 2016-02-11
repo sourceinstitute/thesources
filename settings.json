@@ -2,9 +2,11 @@
   "public": {
     "ga": {
       "account": "UA-65208205-13"
+    },
+    "disqus" : {
+      "shortname": "thesources"
     }
   },
   "private": {
-    //here add private third parties
   }
 }
