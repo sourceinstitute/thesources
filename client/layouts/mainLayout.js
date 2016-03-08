@@ -1,8 +1,3 @@
-FlowRouter.onBeforeAction(function(){
-  $(window).scrollTop(0);
-  this.next();
-});
-
 Template.mainLayout.helpers({
   // todo fetch answers and fill form, pay attention how to work with radio/checkbox
   // this can happen when we have userId so if logedin user maybe no need to pay attention on that, we will see
@@ -47,10 +42,6 @@ Template.mainLayout.rendered = function(){
 
 Template.mainLayout.onCreated(function() {
   //check if this.data.lesson() exists and then change seo
-  
-
-  
-  
   
 });
 
